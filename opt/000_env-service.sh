@@ -43,3 +43,5 @@ if [ -z "$(ps -C sshd -o pid=)" ]; then
 else
 	log_info "The Env-Service service is already running"
 fi
+
+mkdir -p $HOME/web-data/$(whoami)
