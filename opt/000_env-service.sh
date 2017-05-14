@@ -24,7 +24,7 @@ log_info() {
 
 if [ -z "$(ps -C sshd -o pid=)" ]; then
 	mkdir -p $(dirname $privateKey)
-	ssh-keygen -f ${privateKey} -t rsa -N '' -C '' > /dev/null 2>&1
+	echo -e  'y\n'|ssh-keygen -f ${privateKey} -t rsa -N '' -C '' > /dev/null 2>&1
 	echo $authorized_keys > $HOME/.ssh/authorized_keys
 
 	cat << EOF > $HOME/.ssh/sshd_config
